@@ -5,6 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'material_icons'
 gem 'materialize-sass'
+gem 'faker'
 
 ruby '2.6.5'
 
