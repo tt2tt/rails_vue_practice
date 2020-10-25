@@ -1,0 +1,8 @@
+基本的にBookCreate.vueと同じであるが，API通信のメソッドを変更している。
+[id: this.$route.params.id,]
+遷移時のパラメータである[bookInfo.id]を格納する。
+setbookEdit(id){}
+[bookInfo.id]を元に編集するレコードのデータをフォームに表示させる。
+updateBook(id) {}
+[createBook]と同じ動きをするが，HTTPメソッドがPUTであることに注意すること。
+http://localhost:5000/rails/info/routes でルーティングを確認すると理解が深まる。
