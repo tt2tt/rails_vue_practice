@@ -1,8 +1,25 @@
-基本的にBookCreate.vueと同じであるが，API通信のメソッドを変更している。
-[id: this.$route.params.id,]
-遷移時のパラメータである[bookInfo.id]を格納する。
-setbookEdit(id){}
-[bookInfo.id]を元に編集するレコードのデータをフォームに表示させる。
-updateBook(id) {}
-[createBook]と同じ動きをするが，HTTPメソッドがPUTであることに注意すること。
-http://localhost:5000/rails/info/routes でルーティングを確認すると理解が深まる。
+...
+<script>
+...
+    data: function() {
+      return {
+        bookInfo: {},
+        bookInfoBool: false,
+        // [store.js]に移行するため，[books]を削除
+      }
+    },
+    computed: {
+       // [store.js]から[books]を呼び出して，[BookHome.vue]のdata[books]に格納
+      books() {
+       return this.$store.state.books
+      }
+    },
+    mounted: function() {
+      // [fetchBooks]を[store.js]から呼び出すため，コード修正
+      this.$store.commit('fetchBooks')
+    },
+    methods: {
+      // [store.js]に移行するため，[fetchBooks]を削除
+      ...
+    }
+...
