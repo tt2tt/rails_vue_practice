@@ -6,6 +6,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gem 'material_icons'
 gem 'materialize-sass'
 gem 'faker'
+gem 'bcrypt'
+gem 'jwt_sessions'
+gem 'redis'
 
 ruby '2.6.5'
 
